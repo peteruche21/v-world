@@ -26,7 +26,7 @@ describe("VWorld", function () {
     async function inexistentPurchase() {
       await vworldContract.purchaseLand([18, 82]);
     }
-    expect(inexistentPurchase).to.be.reverted();
+    expect(inexistentPurchase).to.be.reverted("INVALID_ARGUMENT");
   });
   it("Should not allow repurchase of owned land", async function () {
     await vworldContract.purchaseLand([1, 2]);
